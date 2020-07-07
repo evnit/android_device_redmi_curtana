@@ -9,8 +9,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
-# Inherit from curtana device
-$(call inherit-product, device/redmi/curtana/device.mk)
+# Inherit from joyeuse device
+$(call inherit-product, device/redmi/joyeuse/device.mk)
 
 # Inherit some common LineageOS stuff.
 CUSTOM_BUILD_TYPE := OFFICIAL
@@ -21,14 +21,14 @@ TARGET_INCLUDE_STOCK_ARCORE := true
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosp_curtana
-PRODUCT_DEVICE := curtana
+PRODUCT_NAME := aosp_joyeuse
+PRODUCT_DEVICE := joyeuse
 PRODUCT_BRAND := Redmi
 PRODUCT_MANUFACTURER := Xiaomi
 
 # Build info
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_DEVICE=curtana \
-    PRODUCT_NAME=curtana
+    PRODUCT_DEVICE=joyeuse \
+    PRODUCT_NAME=joyeuse
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi

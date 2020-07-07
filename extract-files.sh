@@ -7,7 +7,7 @@
 
 set -e
 
-DEVICE=curtana
+DEVICE=joyeuse
 VENDOR=redmi
 
 # Load extract_utils and do some sanity checks

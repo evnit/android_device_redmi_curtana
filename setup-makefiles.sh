@@ -7,7 +7,7 @@
 
 set -e
 
-DEVICE=curtana
+DEVICE=joyeuse
 VENDOR=redmi
 
 INITIAL_COPYRIGHT_YEAR=2020

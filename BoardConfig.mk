@@ -6,7 +6,7 @@
 
 BUILD_BROKEN_DUP_RULES := true
 
-DEVICE_PATH := device/redmi/curtana
+DEVICE_PATH := device/redmi/joyeuse
 
 # Architecture
 TARGET_ARCH := arm64
@@ -25,7 +25,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a55
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := curtana
+TARGET_OTA_ASSERT_DEVICE := joyeuse
 TARGET_NO_BOOTLOADER := true
 
 # Bootloader
@@ -80,8 +80,8 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 2400
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_curtana
-TARGET_RECOVERY_DEVICE_MODULES := libinit_curtana
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_joyeuse
+TARGET_RECOVERY_DEVICE_MODULES := libinit_joyeuse
 
 # Kernel
 BOARD_RAMDISK_OFFSET := 0x01000000
@@ -173,4 +173,4 @@ BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_VBMETA_SYSTEM_ROLLBACK_INDEX_LOCATION := 1
 
 # Inherit from the proprietary version
--include vendor/redmi/curtana/BoardConfigVendor.mk
+-include vendor/redmi/joyeuse/BoardConfigVendor.mk

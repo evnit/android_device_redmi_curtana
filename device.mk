@@ -82,7 +82,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.redmi_curtana
+    android.hardware.light@2.0-service.joyeuse
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -109,7 +109,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.curtana
+    android.hardware.power@1.2-service.joyeuse
     
 # Soong
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)

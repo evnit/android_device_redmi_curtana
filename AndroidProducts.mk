@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_curtana.mk
+    $(LOCAL_DIR)/aosp_joyeuse.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_curtana-user \
-    aosp_curtana-userdebug \
-    aosp_curtana-eng
+    aosp_joyeuse-user \
+    aosp_joyeuse-userdebug \
+    aosp_joyeuse-eng

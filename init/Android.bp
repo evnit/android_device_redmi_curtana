@@ -14,8 +14,8 @@
 // limitations under the License.
 //
 cc_library_static {
-    name: "libinit_curtana",
-    srcs: ["init_curtana.cpp"],
+    name: "libinit_joyeuse",
+    srcs: ["init_joyeuse.cpp"],
     recovery_available: true,
     include_dirs: [
         "system/core/base/include",
