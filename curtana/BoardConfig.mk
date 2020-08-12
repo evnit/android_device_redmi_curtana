@@ -15,6 +15,9 @@ DEVICE_PATH := device/xiaomi/curtana
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := curtana
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+
 # Display
 TARGET_SCREEN_DENSITY := 440
 

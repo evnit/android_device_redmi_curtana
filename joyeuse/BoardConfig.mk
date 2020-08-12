@@ -18,5 +18,8 @@ TARGET_BOOTLOADER_BOARD_NAME := joyeuse
 # Display
 TARGET_SCREEN_DENSITY := 430
 
+# HIDL
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+
 # Kernel
 TARGET_KERNEL_CONFIG := vendor/joyeuse_defconfig
