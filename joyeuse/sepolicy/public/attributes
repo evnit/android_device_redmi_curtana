@@ -1,0 +1,9 @@
+hal_attribute(displayfeature)
+
+hal_attribute(misys)
+
+hal_attribute(mlipay)
+
+hal_attribute(motor)
+
+hal_attribute(touchfeature)
