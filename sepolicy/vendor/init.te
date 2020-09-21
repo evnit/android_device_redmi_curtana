@@ -1,0 +1,5 @@
+dontaudit init {
+  bt_firmware_file
+  firmware_file
+}:filesystem getattr;
+allow init hal_fingerprint_default:process ptrace;

@@ -13,10 +13,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
+
 cc_library_static {
-    name: "libinit_curtana",
-    srcs: ["init_curtana.cpp"],
+    name: "libinit_joyeuse",
     recovery_available: true,
+    srcs: [
+        "joyeuse.cpp"
+    ],
     include_dirs: [
         "system/core/base/include",
         "system/core/init"

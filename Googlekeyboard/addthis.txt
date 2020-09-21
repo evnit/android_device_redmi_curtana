@@ -1,0 +1,12 @@
+Add these line to your command file:
+
+########################## LatinIME Google Prebuilt ################ START
+PRODUCT_PACKAGES += \
+    LatinIMEGooglePrebuilt
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/Googlekeyboard/overlay
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/Googlekeyboard/product/usr,$(TARGET_COPY_OUT_PRODUCT)/usr) \
+    $(LOCAL_PATH)/Googlekeyboard/product/etc/sysconfig/google-hiddenapi-LatinIME-keyboard-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google-hiddenapi-LatinIME-keyboard-whitelist.xml
+########################## LatinIME Google Prebuilt ################ END
