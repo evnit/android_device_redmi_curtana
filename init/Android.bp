@@ -15,10 +15,11 @@
 //
 
 cc_library_static {
-    name: "libinit_joyeuse",
+    name: "libinit_atoll",
     recovery_available: true,
     srcs: [
-        "joyeuse.cpp"
+        "miatoll.cpp",
+        "init_common.cpp",
     ],
     include_dirs: [
         "system/core/base/include",

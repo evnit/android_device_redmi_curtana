@@ -12,7 +12,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/nxp/opensource/pn5xx \
     hardware/xiaomi \
     vendor/xiaomi/sm6250-common \
-    vendor/xiaomi/joyeuse \
+    vendor/xiaomi/miatoll \
     vendor/xiaomi/curtana \
 
 # Overlays
@@ -49,7 +49,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # ANXCamera
-# $(call inherit-product-if-exists, $(LOCAL_PATH)/ANXCamera/anx-vendor.mk)
+$(call inherit-product-if-exists, $(LOCAL_PATH)/ANXCamera/anx-vendor.mk)
 
 ########################## LatinIME Google Prebuilt ################ START
 # Gboard
@@ -332,7 +332,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.rc \
     $(LOCAL_PATH)/rootdir/etc/init.qcom.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.qcom.usb.rc \
     $(LOCAL_PATH)/rootdir/etc/init.target.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.target.rc \
-    $(LOCAL_PATH)/rootdir/etc/init.joyeuse.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.joyeuse.rc \
+    $(LOCAL_PATH)/rootdir/etc/init.device.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.device.rc \
     $(LOCAL_PATH)/rootdir/etc/ueventd.rc:$(TARGET_COPY_OUT_VENDOR)/ueventd.rc \
     $(LOCAL_PATH)/rootdir/etc/init.safailnet.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.safailnet.rc \
 
@@ -498,7 +498,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += android.hardware.usb@1.0-service
 
 # USB
-PRODUCT_PACKAGES += vendor.qti.hardware.vibrator@1.2-service
+PRODUCT_PACKAGES += vendor.qti.hardware.vibrator@1.2-service.xiaomi_sm6250
 
 # Trust HAL
 PRODUCT_PACKAGES += vendor.lineage.trust@1.0-service
@@ -553,13 +553,13 @@ PRODUCT_COPY_FILES += \
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.ese.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hcef.xml \
-    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.uicc.xml \
-    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
-    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
+    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/android.hardware.nfc.ese.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hcef.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/android.hardware.nfc.hcef.xml \
+    frameworks/native/data/etc/android.hardware.nfc.uicc.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/android.hardware.nfc.uicc.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_joyeuse/com.nxp.mifare.xml
 
 # For NFC
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -586,5 +586,21 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face.moto_unlock_service=$(TARGET_FACE_UNLOCK_SUPPORTED)
 
+# Thermal
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/thermal/thermal-engine-map.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-map-curtana.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map-curtana.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-normal-curtana.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal-curtana.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-camera-curtana.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera-curtana.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-map-excalibur.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map-excalibur.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-normal-excalibur.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal-excalibur.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-camera-excalibur.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera-excalibur.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-map-gram.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map-gram.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-normal-gram.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal-gram.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-camera-gram.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera-gram.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-map-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-map-joyeuse.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-normal-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-normal-joyeuse.conf \
+    $(LOCAL_PATH)/thermal/thermal-engine-camera-joyeuse.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-camera-joyeuse.conf
+
 # Inherit proprietary targets
-$(call inherit-product, vendor/xiaomi/joyeuse/joyeuse-vendor.mk)
+$(call inherit-product, vendor/xiaomi/miatoll/miatoll-vendor.mk)

@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/joyeuse
+DEVICE_PATH := device/xiaomi/miatoll
 
 BUILD_BROKEN_DUP_RULES := true
 BOARD_VENDOR := xiaomi
@@ -23,7 +23,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a9
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := joyeuse
+TARGET_BOOTLOADER_BOARD_NAME := miatoll
 
 # Audio
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
@@ -52,7 +52,7 @@ TARGET_SCREEN_DENSITY := 430
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 
 # Bootloader
-TARGET_OTA_ASSERT_DEVICE := joyeuse
+TARGET_OTA_ASSERT_DEVICE := joyeuse,gram,curtana,excalibur
 TARGET_NO_BOOTLOADER := true
 
 # Camera
@@ -116,18 +116,19 @@ BOARD_KERNEL_CMDLINE += swiotlb=1
 BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
-# HWUI
-HWUI_COMPILE_FOR_PERF := true
-
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
+
+# HIDL FOR JOYEUSE
+ODM_MANIFEST_SKUS += \
+    joyeuse
+
+ODM_MANIFEST_JOYEUSE_FILES := $(DEVICE_PATH)/manifest_joyeuse.xml
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_joyeuse
-TARGET_RECOVERY_DEVICE_MODULES := libinit_joyeuse
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_atoll
+TARGET_RECOVERY_DEVICE_MODULES := libinit_atoll
 
 # Media
 TARGET_USES_ION := true
@@ -154,15 +155,9 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_PRODUCT := product
 
-# Renderscript
-OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
-
 # Power
 TARGET_USES_INTERACTION_BOOST := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
-
-# Peripheral manager
-TARGET_PER_MGR_ENABLED := true
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
@@ -185,11 +180,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2020-08-01
-
-# VNDK
-BOARD_VNDK_VERSION := current
-PRODUCT_EXTRA_VNDK_VERSIONS := 28
+VENDOR_SECURITY_PATCH := 2020-06-01
 
 # Sepolicy
 include device/qcom/sepolicy/sepolicy.mk
@@ -221,4 +212,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
--include vendor/xiaomi/joyeuse/BoardConfigVendor.mk
+-include vendor/xiaomi/miatoll/BoardConfigVendor.mk

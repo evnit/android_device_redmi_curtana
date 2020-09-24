@@ -14,31 +14,24 @@
  * limitations under the License.
  */
 
-#include <cstdlib>
-#include <fstream>
-#include <string.h>
+#include <cstring>
 #include <sys/sysinfo.h>
-#include <unistd.h>
 
-#include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "vendor_init.h"
+#include "init_common.h"
 #include "property_service.h"
 
-using android::base::GetProperty;
 using android::init::property_set;
 
-char const *heapstartsize;
-char const *heapgrowthlimit;
-char const *heapsize;
-char const *heapminfree;
-char const *heapmaxfree;
-char const *heaptargetutilization;
-
-void check_device()
-{
+void load_dalvik_properties() {
+    char const *heapstartsize;
+    char const *heapgrowthlimit;
+    char const *heapsize;
+    char const *heapminfree;
+    char const *heapmaxfree;
+    char const *heaptargetutilization;
     struct sysinfo sys;
 
     sysinfo(&sys);
@@ -59,12 +52,9 @@ void check_device()
         heaptargetutilization = "0.6";
         heapminfree = "8m";
         heapmaxfree = "16m";
+    } else {
+        return;
     }
-}
-
-void vendor_load_properties()
-{
-    check_device();
 
     property_set("dalvik.vm.heapstartsize", heapstartsize);
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
@@ -72,4 +62,8 @@ void vendor_load_properties()
     property_set("dalvik.vm.heaptargetutilization", heaptargetutilization);
     property_set("dalvik.vm.heapminfree", heapminfree);
     property_set("dalvik.vm.heapmaxfree", heapmaxfree);
+}
+
+void load_common_properties() {
+    load_dalvik_properties();
 }

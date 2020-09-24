@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_joyeuse.mk
+    $(LOCAL_DIR)/lineage_miatoll.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_joyeuse-user \
-    lineage_joyeuse-userdebug \
-    lineage_joyeuse-eng
+    lineage_miatoll-user \
+    lineage_miatoll-userdebug \
+    lineage_miatoll-eng

@@ -43,6 +43,7 @@ static const device_t devices[] = {
     {"curtana", "India", "Redmi Note 9 Pro"},
     {"excalibur", "India", "Redmi Note 9 Pro Max"},
     {"joyeuse", "VDF_TWO", "Redmi Note 9 Pro"},
+    {"gram", "India", "POCO M2 Pro"},
 };
 static inline const char *BtmGetDefaultName()
 {

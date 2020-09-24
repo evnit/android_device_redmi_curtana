@@ -27,12 +27,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-# Remove recovery cache from persist
-rm -rf /mnt/vendor/persist/cache/recovery
-
-# Remove settings cache, avoids derps after dirty flash
-rm -rf /data/system/package_cache
-
 #
 # Make modem config folder and copy firmware config to that folder for RIL
 #

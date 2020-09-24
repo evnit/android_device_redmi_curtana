@@ -7,7 +7,7 @@
 
 set -e
 
-DEVICE=joyeuse
+DEVICE=miatoll
 VENDOR=xiaomi
 
 INITIAL_COPYRIGHT_YEAR=2020
