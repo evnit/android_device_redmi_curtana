@@ -1,5 +1,1 @@
-dontaudit init {
-  bt_firmware_file
-  firmware_file
-}:filesystem getattr;
-allow init hal_fingerprint_default:process ptrace;
+allow init adsprpcd_file:file mounton;

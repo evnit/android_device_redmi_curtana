@@ -1,54 +1,11 @@
-genfscon sysfs /kernel/boot_cdsp/boot                                           u:object_r:sysfs_msm_boot:s0
-genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_state           u:object_r:sysfs_graphics:s0
-genfscon sysfs /devices/virtual/ramoops/pstore/aes_key u:object_r:sysfs_pstore:s0
-genfscon sysfs /devices/virtual/ramoops/pstore/aes_key_iv u:object_r:sysfs_pstore:s0
-genfscon sysfs /devices/virtual/ramoops/pstore/aes_key_tag u:object_r:sysfs_pstore:s0
-genfscon sysfs /devices/virtual/ramoops/pstore/use_alt u:object_r:sysfs_pstore:s0
-
-genfscon sysfs /devices/platform/soc/2c00000.qcom,kgsl-3d0                      u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,gpubw                             u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,gpubw/devfreq                     u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cpu-cpu-llcc-bw                   u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cpu-llcc-ddr-bw                   u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cpu0-cpu-l3-lat                   u:object_r:sysfs_msm_subsys:s0
-genfscon sysfs /devices/platform/soc/soc:qcom,cpu6-cpu-l3-lat                   u:object_r:sysfs_msm_subsys:s0
-genfscon debugfs /sched_features                      u:object_r:debugfs_sched_features:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/clkgate_enable               u:object_r:sysfs_scsi_host:s0
-genfscon sysfs /devices/platform/soc/1d84000.ufshc/hibern8_on_idle_enable       u:object_r:sysfs_scsi_host:s0
-
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/clk_enable            u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/device_prepare        u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/finger_irq            u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/fingerdown_wait       u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/handle_wakelock       u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/hw_reset              u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/irq                   u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/irq_enable            u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/pinctl_set            u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/regulator_enable      u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/request_vreg          u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/simulate_irq          u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/vendor                u:object_r:sysfs_fingerprint:s0
-genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup_enable         u:object_r:sysfs_fingerprint:s0
-
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/white/breath                        u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/white/brightness                    u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/white/max_brightness                u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/flashlight/brightness               u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/led:torch_0/brightness              u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/led:torch_1/brightness              u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/led:switch_0/brightness             u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/led:switch_1/brightness             u:object_r:sysfs_leds:s0
-genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/white                               u:object_r:sysfs_graphics:s0
-
-genfscon sysfs /kernel/wlan u:object_r:sysfs_power_stats:s0
-genfscon sysfs /kernel/wlan/power_stats u:object_r:sysfs_power_stats:s0
-genfscon sysfs /power/system_sleep/stats u:object_r:sysfs_power_stats:s0
-genfscon sysfs /power/rpmh_stats/master_stats u:object_r:sysfs_power_stats:s0
-
 # Battery
 genfscon sysfs /devices/soc/c176000.i2c/i2c-2/2-001d            u:object_r:sysfs_battery_supply:s0
 
+# Camera
+genfscon sysfs /camera_sensorid/sensorid                        u:object_r:sysfs_graphics:s0
+
+# LED
+genfscon sysfs /devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm6150l@5:qcom,leds@d000/leds/white u:object_r:sysfs_graphics:s0
+
 # Touchpanel
 genfscon sysfs /touchpanel                                      u:object_r:sysfs_touchpanel:s0
-
